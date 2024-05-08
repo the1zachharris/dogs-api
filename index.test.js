@@ -33,4 +33,16 @@ describe('Endpoints', () => {
             expect(response.body[0]).toEqual(expect.objectContaining(dogs[0]));
         });
     });
+    describe("POST /dogs", () => {
+        it("should create a dog and save it to the database", async () => {
+            const response = await request(app).post("/dogs").send({ 
+                breed: 'Labrador', 
+                name: 'Fido', 
+                color: 'black', 
+                description: 'Fido loves to fetch! He loves to play with his doggy friends!'}
+            )
+            
+            
+        })
+    })
 });
